@@ -64,12 +64,25 @@ namespace Day35_LambdaExpress_LinQ
             }
         }
         //Display method.
-            public void Display(IEnumerable<ProductReview> result)
-            {
+        public void Display(IEnumerable<ProductReview> result)
+        {
             foreach (var prod in result)
             {
                 Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
 
+            }
+        }
+        //UC4:- Management - Retrieve count of review present for each productID use group By Using Lambda  
+        public void CountProduct(List<ProductReview>products)
+        {
+            Console.WriteLine("Retrieve count of review present for each ProductID use groupBy");
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Using LinQ");
+            Console.WriteLine("-----------------------------");
+            var result = products.GroupBy(x => x.ProductID);
+            foreach (var product in result)
+            {
+                Console.WriteLine(product.Key + " " + product.Count());
             }
 
         }

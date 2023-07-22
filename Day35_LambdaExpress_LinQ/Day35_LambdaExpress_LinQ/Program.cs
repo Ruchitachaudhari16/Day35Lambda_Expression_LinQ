@@ -48,6 +48,7 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine("Enter your Choice");
                 Console.WriteLine("1:-Top three ratings");
                 Console.WriteLine("2:-rating greater than,where id is 1,4,& 9");
+                Console.WriteLine("3:-Retrieve count of review present for each ProductID");
                 int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
@@ -56,6 +57,9 @@ namespace Day35_LambdaExpress_LinQ
                         break;
                         case 2:
                         management.ProductRating(list);
+                        break;
+                        case 3:
+                        management.CountProduct(list);
                         break;
                 }
             }
