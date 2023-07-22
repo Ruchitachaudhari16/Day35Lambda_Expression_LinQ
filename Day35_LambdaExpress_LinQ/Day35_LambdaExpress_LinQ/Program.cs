@@ -46,12 +46,16 @@ namespace Day35_LambdaExpress_LinQ
             while (true)
             {
                 Console.WriteLine("Enter your Choice");
-                Console.WriteLine("1-Top three ratings");
+                Console.WriteLine("1:-Top three ratings");
+                Console.WriteLine("2:-rating greater than,where id is 1,4,& 9");
                 int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
                     case 1:
                         management.TopRecord(list);
+                        break;
+                        case 2:
+                        management.ProductRating(list);
                         break;
                 }
             }
