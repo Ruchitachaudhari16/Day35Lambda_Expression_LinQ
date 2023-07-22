@@ -156,6 +156,16 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine(product.ProductID + "  " + product.Review);
             }
 
+            //Retrieve only productID and review from the list for all records using LINQ
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Using LinQ");
+            Console.WriteLine("-----------------------------");
+            var record = from product in products select new { product.ProductID, product.Review };
+            foreach (var product in record)
+            {
+                Console.WriteLine(product.ProductID + "  " + product.Review);
+            }
+
         }
     }
     }
