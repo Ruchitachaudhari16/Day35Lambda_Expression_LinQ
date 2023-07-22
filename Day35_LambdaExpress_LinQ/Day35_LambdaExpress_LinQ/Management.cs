@@ -77,13 +77,24 @@ namespace Day35_LambdaExpress_LinQ
         {
             Console.WriteLine("Retrieve count of review present for each ProductID use groupBy");
             Console.WriteLine("-----------------------------");
-            Console.WriteLine("Using LinQ");
+            Console.WriteLine("Using Lambda");
             Console.WriteLine("-----------------------------");
             var result = products.GroupBy(x => x.ProductID);
             foreach (var product in result)
             {
                 Console.WriteLine(product.Key + " " + product.Count());
             }
+            //UC4:- Management - Retrieve count of review present for each productID use group By Using LINQ 
+
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Using LinQ");
+            Console.WriteLine("-----------------------------");
+            var record = products.GroupBy(x => x.ProductID).Select(x => new { ProductId = x.Key, Count = x.Count() });
+            foreach (var prod in record)
+            {
+                Console.WriteLine(prod.ProductId + "  " + prod.Count);
+            }
+
 
         }
     }
