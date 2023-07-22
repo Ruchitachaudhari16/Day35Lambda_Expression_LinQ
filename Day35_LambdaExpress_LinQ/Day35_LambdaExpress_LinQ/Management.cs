@@ -142,7 +142,22 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
             }
         }
+
+        //UC-7 - Retrieve only productId and review from the list for all records using Lambda
+        public void ProductId_ReviewUsing_SelectOperator(List<ProductReview> products)
+        {
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Using Lambda");
+            Console.WriteLine("-----------------------------");
+            var result = products.Select(x => new { x.ProductID, x.Review });
+
+            foreach (var product in result)
+            {
+                Console.WriteLine(product.ProductID + "  " + product.Review);
+            }
+
         }
+    }
     }
     
 

@@ -51,6 +51,7 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine("3:-Retrieve count of review present for each ProductID");
                 Console.WriteLine("4:-Retrieve only product id & Review from list");
                 Console.WriteLine("5:-Skip 5 records from list and display other records ");
+                Console.WriteLine("6:-Retrieve only productId and review from the list for all records");
                 int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
@@ -68,6 +69,9 @@ namespace Day35_LambdaExpress_LinQ
                         break;
                         case 5:
                         management.SkipTop_Record(list);
+                        break;
+                        case 6:
+                        management.ProductId_ReviewUsing_SelectOperator(list);
                         break;
                 }
             }
