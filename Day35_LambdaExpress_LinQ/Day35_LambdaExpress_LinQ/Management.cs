@@ -123,6 +123,16 @@ namespace Day35_LambdaExpress_LinQ
         //UC6:-Management - skip top 5 records from the list using Lambda and display other records using LAMBDA
         public void SkipTop_Record(List<ProductReview> products)
         {
+
+            var result = products.OrderByDescending(x => x.Rating).Skip(5);
+            Console.WriteLine("-----------------------------");
+            Console.WriteLine("Using Lambda");
+            Console.WriteLine("-----------------------------");
+            foreach (var prod in result)
+            {
+                Console.WriteLine(prod.ProductID + "  " + prod.UserID + "  " + prod.Rating + "  " + prod.Review + "  " + prod.IsLike);
+            }
+            //Skip 5 records using LINQ
             var records = (from product in products select product).Skip(5);
             Console.WriteLine("-----------------------------");
             Console.WriteLine("Using LinQ");
