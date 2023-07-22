@@ -42,11 +42,12 @@ namespace Day35_LambdaExpress_LinQ
                 new ProductReview(){ ProductID = 6,UserID = 25,Rating=6, Review="Nice",IsLike=false},
 
             };
+            
             while (true)
             {
+                Console.WriteLine("Enter your Choice");
                 Console.WriteLine("1-Top three ratings");
-                Console.WriteLine("Choose a option");
-                int op = Convert.ToInt32(Console.ReadLine());
+                int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
                     case 1:
