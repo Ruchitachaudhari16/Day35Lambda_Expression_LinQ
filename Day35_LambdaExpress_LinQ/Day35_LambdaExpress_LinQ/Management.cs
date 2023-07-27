@@ -1,6 +1,7 @@
 ﻿using Day35_LambdaExpress_LinQ;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -73,7 +74,7 @@ namespace Day35_LambdaExpress_LinQ
             }
         }
         //UC4:- Management - Retrieve count of review present for each productID use group By Using Lambda  
-        public void CountProduct(List<ProductReview>products)
+        public void CountProduct(List<ProductReview> products)
         {
             Console.WriteLine("Retrieve count of review present for each ProductID use groupBy");
             Console.WriteLine("-----------------------------");
@@ -166,8 +167,26 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine(product.ProductID + "  " + product.Review);
             }
 
+
+        }
+        //UC-8 ceate data table using a c#
+        public DataTable AddToDataTable(List<ProductReview> product)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ProductID",typeof(int));
+            dataTable.Columns.Add("UserID");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("IsLike");
+            foreach (var data in product)
+            {
+                dataTable.Rows.Add(data.ProductID, data.UserID, data.Rating, data.Review, data.IsLike);
+
+            }
+            return dataTable;
         }
     }
+
     }
     
 

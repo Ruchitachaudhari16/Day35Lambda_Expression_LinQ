@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,7 @@ namespace Day35_LambdaExpress_LinQ
                 Console.WriteLine("4:-Retrieve only product id & Review from list");
                 Console.WriteLine("5:-Skip 5 records from list and display other records ");
                 Console.WriteLine("6:-Retrieve only productId and review from the list for all records");
+                Console.WriteLine("7:Create Data table using c sharp");
                 int op = int.Parse(Console.ReadLine());
                 switch (op)
                 {
@@ -72,6 +74,10 @@ namespace Day35_LambdaExpress_LinQ
                         break;
                         case 6:
                         management.ProductId_ReviewUsing_SelectOperator(list);
+                        break;
+                    case 7:
+                        DataTable data = new DataTable();
+                        management.AddToDataTable(list);
                         break;
                 }
             }
